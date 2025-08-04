@@ -2,101 +2,43 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen font-sans">
+      <nav className="flex items-center justify-between px-8 py-4 bg-fuchsia-600 text-white sticky top-0 z-10">
+        <div className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="CoLive logo" width={40} height={40} />
+          <span className="font-bold text-lg">CoLive</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <ul className="flex gap-4">
+          <li><a href="#home" className="hover:underline">Home</a></li>
+          <li><a href="#locations" className="hover:underline">Dove siamo</a></li>
+          <li><a href="#about" className="hover:underline">About</a></li>
+          <li><a href="#contact" className="hover:underline">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <section id="home" className="flex flex-col items-center justify-center gap-6 text-center bg-sky-200 text-sky-900 py-32 px-4">
+        <h1 className="text-5xl font-extrabold">🏡 Vivi il coliving dei tuoi sogni</h1>
+        <p className="max-w-2xl text-lg">Spazi condivisi, community vibrante e libertà di lavorare da ovunque tu voglia.</p>
+        <Image src="/hero.svg" alt="Coliving illustration" width={400} height={300} priority />
+      </section>
+
+      <section id="locations" className="py-32 px-4 bg-lime-200 text-lime-900 text-center">
+        <h2 className="text-4xl font-bold mb-4">🌍 Dove siamo</h2>
+        <p className="max-w-2xl mx-auto">Siamo presenti nelle principali città italiane e in hub internazionali in continua crescita.</p>
+      </section>
+
+      <section id="about" className="py-32 px-4 bg-orange-200 text-orange-900 text-center">
+        <h2 className="text-4xl font-bold mb-4">ℹ️ About</h2>
+        <p className="max-w-2xl mx-auto">Offriamo soluzioni di coliving flessibili pensate per nomadi digitali, studenti e professionisti che cercano una casa lontano da casa.</p>
+      </section>
+
+      <section id="contact" className="py-32 px-4 bg-fuchsia-200 text-fuchsia-900 text-center">
+        <h2 className="text-4xl font-bold mb-4">📬 Contatti</h2>
+        <p className="max-w-xl mx-auto">Scrivici a <a href="mailto:info@colive.example" className="underline">info@colive.example</a> o chiamaci al <a href="tel:+391234567890" className="underline">+39 123 456 7890</a>.</p>
+      </section>
+
+      <footer className="py-6 text-center text-sm bg-fuchsia-600 text-white">
+        © {new Date().getFullYear()} CoLive - Coliving senza confini
       </footer>
     </div>
   );
